@@ -1,2 +1,3 @@
-# LostNFound
-Basic idea of a campus based webpage where people share what they have lost and found.
+# LostNFound 
+
+Basic idea of a campus-based webpage where people share what tey have lost and found.
