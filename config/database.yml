@@ -26,6 +26,7 @@ development:
   adapter: postgresql
   host: localhost
   username: lostnfound
+  password: lostnfound_password
   database: LostNFound_development
 
   # The specified database role being used to connect to postgres.
