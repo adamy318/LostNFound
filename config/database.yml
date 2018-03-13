@@ -27,7 +27,7 @@ development:
   host: localhost
   username: lostnfound
   password: lostnfound_password
-  database: LostNFound_development
+  database: LostNFound_Development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
