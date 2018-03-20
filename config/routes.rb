@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'listings/new'
+
+  get 'listings/create'
+
   get 'static_pages/home'
 
   get 'static_pages/about'
