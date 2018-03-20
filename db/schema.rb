@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20180316060232) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "email"
-    t.string "password_hash"
   end
 
 end
