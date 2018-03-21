@@ -1,14 +1,16 @@
-require 'bcrypt'
+require 'pbkdf2'
 
 class User < ApplicationRecord
 
-  include BCrypt
   include SecureRandom
-
+  
+  # allows virtual attributes to be 'get' and 'set'
   attr_accessor :password, :password_confirmation, :pass_hash
 
+  # this and block below it makes sure username and email
+  # is lowercase before being saved in the database
   before_save :lower
-
+  
   def lower
      self.email = email.downcase
      self.username = username.downcase
@@ -31,16 +33,29 @@ class User < ApplicationRecord
   # password_confirmation field the user input in the provided form
   # on the view
   # This is so that we do not save plain text passwords in database
+  # also does hashing on server
   
   #virtual attribute
   def password=(unencrypted_password)
     @password = unencrypted_password
   end
 
+  #virtual attribute
   def pass_hash
-    @pass_hash = Password.create(unencrypted_password, :cost => 12)
-    self.password_salt = hash.salt
-    self.password_hash = @pass_hash
+    
+    # *.unpack("B*").first gets binary string
+    salt = SecureRandom.base64(64).unpack("B*").first
+   
+    # block to hash password 
+    @pass_hash = PBKDF2.new do |p|
+      p.password = @password.unpack("B*").first
+      p.salt = salt
+      p.iterations = 10000
+    end
+    
+    # updates columns from users table in memory; doesn't write to database yet
+    self.password_salt = salt
+    self.password_hash = @pass_hash.hex_string
   end
 
 private

@@ -102,6 +102,7 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    pbkdf2-ruby (0.2.1)
     pg (1.0.0)
     public_suffix (3.0.2)
     puma (3.11.3)
@@ -200,6 +201,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  pbkdf2-ruby (~> 0.2.1)
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.5)
