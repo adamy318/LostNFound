@@ -10,4 +10,8 @@ class ListingsController < ApplicationController
   params.require(:listing).permit(:image)
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
 end
