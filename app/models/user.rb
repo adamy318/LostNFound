@@ -5,7 +5,7 @@ class User < ApplicationRecord
   include BCrypt
   include SecureRandom
 
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password, :password_confirmation, :pass_hash
 
   before_save :lower
 
@@ -35,10 +35,12 @@ class User < ApplicationRecord
   #virtual attribute
   def password=(unencrypted_password)
     @password = unencrypted_password
-    hash = Password.create(unencrypted_password, :cost => 12)
+  end
+
+  def pass_hash
+    @pass_hash = Password.create(unencrypted_password, :cost => 12)
     self.password_salt = hash.salt
-    self.password_hash = hash
-    
+    self.password_hash = @pass_hash
   end
 
 private
