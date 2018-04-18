@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+#Ignore databases
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -17,4 +21,3 @@
 /yarn-error.log
 
 .byebug_history
-
