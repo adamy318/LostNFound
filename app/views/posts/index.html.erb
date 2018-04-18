@@ -1,6 +1,20 @@
 <h1>Posts are Here</h1>
-<% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p><%= post.body %></p>
-<% end %>
 <%= link_to 'New Post', new_post_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th colspan = "2"></th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <!-- <div class="post_wrapper">
+      <h3 class="title"><%= link_to post.title, post %></h3>
+    </div> -->
+    <tr>
+      <td><%= image_tag post.image.url(:thumb) %></td>
+      <td><%= post.title %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <% end %>
+</table>
