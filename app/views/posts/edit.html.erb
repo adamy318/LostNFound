@@ -28,8 +28,7 @@
 
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
-    <%= @post.body %>
+    <%= f.text_area :text, :value => @post.body %>
   </p>
 
   <p>
