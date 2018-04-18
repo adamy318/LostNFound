@@ -12,6 +12,7 @@
       <h3 class="title"><%= link_to post.title, post %></h3>
     </div> -->
     <tr>
+      <td><%= image_tag post.image.url(:thumb) %></td>
       <td><%= post.title %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
