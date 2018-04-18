@@ -1,6 +1,7 @@
 <h1>Posts are Here</h1>
 <% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p><%= post.body %></p>
+  <div class="post_wrapper">
+    <h3 class="title"><%= link_to post.title, post %></h3>
+  </div>
 <% end %>
 <%= link_to 'New Post', new_post_path %>
