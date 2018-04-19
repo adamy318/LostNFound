@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
+  
   root 'static_pages#home'
 
   get '/about', to: 'static_pages#about'
