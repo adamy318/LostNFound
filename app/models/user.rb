@@ -10,6 +10,7 @@ class User < ApplicationRecord
   # this and block below it makes sure username and email
   # is lowercase before being saved in the database
   before_save :lower
+  before_save :pass_hash
   
   def lower
      self.email = email.downcase

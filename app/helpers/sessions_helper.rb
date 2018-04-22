@@ -10,7 +10,7 @@ module SessionsHelper
   # stored in the database
   # returns true if password hashes match, false otherwise
   def authenticate(user, password)
-    salt = user.pass_salt
+    salt = user.password_salt 
 
     hash = PBKDF2.new do |p|
       p.password = password.unpack("B*").first
@@ -20,7 +20,7 @@ module SessionsHelper
 
     pass_hash = hash.hex_string
    
-    pass_hash == user.pass_hash 
+    pass_hash == user.password_hash 
   end
 
 

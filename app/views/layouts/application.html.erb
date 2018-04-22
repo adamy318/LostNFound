@@ -55,14 +55,18 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <% if logged_in? %>
-              <li><%= link_to "Listings", listings_path %></li>
+              <li><%= link_to "Listings", '#' %></li>
             <% else %>
               <li><%= link_to "Listings", restrict_path  %></li>
             <% end %>
             <li><a href="about">About Us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <% if logged_in? %>
+              <li><span class="glyphicon glyphicon-log-out"><%= link_to "Log out", logout_path, method: :delete %></li>
+            <% else %>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -70,6 +74,9 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <div class="col-sm-12 text-center">
           <%= yield %>
         </div>
