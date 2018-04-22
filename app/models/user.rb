@@ -17,7 +17,8 @@ class User < ApplicationRecord
      self.username = username.downcase
   end
 
-  validates :username, presence: true, length: { maximum: 32 }
+  validates :username, presence: true, length: { maximum: 32 },
+            uniqueness: {case_sensitive: false}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
