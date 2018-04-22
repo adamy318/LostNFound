@@ -1,0 +1,13 @@
+<% provide(:title, 'restrict') %>
+
+<div class="text-left">
+  <p>You must be logged in to view this part of the site
+     <br>
+     Click <%= link_to "here", login_path %> to log in.
+  </p>
+  
+  <p>Don't have an account?
+     <br>
+     <%= link_to "Register now!", signup_path %>
+  </p>
+</div>

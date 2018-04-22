@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/about', to: 'static_pages#about'
 
+  get '/restrict', to: 'static_pages#restrict'
+
   get '/signup', to: 'users#new'
 
   post '/signup', to: 'users#create'
