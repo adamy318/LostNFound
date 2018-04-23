@@ -63,7 +63,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
-              <li><span class="glyphicon glyphicon-log-out"><%= link_to "Log out", logout_path, method: :delete %></li>
+              <li><%= link_to content_tag(:span, "Log out", class: "glyphicon glyphicon-log-out"), logout_path, method: :delete %></li>
             <% else %>
               <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             <% end %>
