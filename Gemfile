@@ -56,7 +56,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+#Makes file attachment incredibly easy for users
 gem 'paperclip'
+
+#Used to set up a messaging system between users
+gem 'mailboxer'
 
 gem 'therubyracer'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
