@@ -1,8 +1,43 @@
+<style>
+p{
+  font-size: 30px;
+  text-align:left;
+  padding-top: 10px;
+  font-family: monospace;
+}
+h1{
+  color:#8E0098;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: monospace;
+  letter-spacing: 3px;
+  text-shadow: 4px 2px 8px gold;
+}
+th{
+  font-family:monospace;
+  font-size: 30px;
+  text-align: center;
+  padding-right:20px;
+}
+td{
+  font-family:monospace;
+  font-size: 30px;
+  text-align: center;
+  padding-right:25px;
+
+}
+</style>
+<p>
+  <%= link_to 'New Post', new_post_path %>
+</p>
 <h1>Posts are Here</h1>
-<%= link_to 'New Post', new_post_path %>
+
 
 <table>
   <tr>
+    <th>Photos</th>
+    <th colspan = "1"></th>
     <th>Title</th>
     <th colspan = "2"></th>
   </tr>
@@ -10,8 +45,10 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= image_tag post.image.url(:thumb) %></td>
+      <th colspan = "1"></th>
       <td><%= post.title %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
+      <th colspan = "2"></th>
+      <td><%= link_to 'Show Full Text', post_path(post) %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
   <% end %>
 </table>
