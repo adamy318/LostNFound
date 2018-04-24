@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
-    @post.user = current_user.username
+    #@post.user = current_user.username
     @post.save
     redirect_to @post
   end
