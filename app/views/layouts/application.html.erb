@@ -55,9 +55,9 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <% if logged_in? %>
-              <li><%= link_to "Listings", '#' %></li>
+              <li><a href="posts">Posting</a></li>
             <% else %>
-              <li><%= link_to "Listings", restrict_path  %></li>
+              <li><%= link_to "Posting", restrict_path  %></li>
             <% end %>
             <li><a href="about">About Us</a></li>
           </ul>
