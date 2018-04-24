@@ -1,6 +1,6 @@
 <h1>Add Post</h1>
-Posted by: <%= current_user.username %>
 <%= form_for :post, url: posts_path, html: {multipart: true } do |f| %>
+
   <p>
   <%= f.file_field :image %>
   </p>
@@ -14,7 +14,7 @@ Posted by: <%= current_user.username %>
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </p>
-
+  
   <p>
     <%= f.submit %>
   </p>

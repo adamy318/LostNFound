@@ -11,6 +11,7 @@
     <tr>
       <td><%= image_tag post.image.url(:thumb) %></td>
       <td><%= post.title %></td>
+      <td><%= post.body %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
   <% end %>
