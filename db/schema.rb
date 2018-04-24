@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180423033827) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string "user"
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180423033827) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "email"
+    t.string "password_salt"
     t.string "password_hash"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
