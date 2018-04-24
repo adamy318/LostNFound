@@ -8,9 +8,6 @@
   </tr>
 
   <% @posts.each do |post| %>
-    <!-- <div class="post_wrapper">
-      <h3 class="title"><%= link_to post.title, post %></h3>
-    </div> -->
     <tr>
       <td><%= image_tag post.image.url(:thumb) %></td>
       <td><%= post.title %></td>
