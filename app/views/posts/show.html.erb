@@ -1,7 +1,7 @@
 <%= image_tag @post.image.url(:medium) %>
 <h2><%= @post.title %></h2>
 <p><%= @post.body %></p>
-
+Posted By: <%= @post.user %>
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>

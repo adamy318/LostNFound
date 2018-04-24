@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
 
   def edit
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
-
+    @post.user = current_user.username
     @post.save
     redirect_to @post
   end
@@ -33,6 +33,6 @@ class PostsController < ApplicationController
   end
 
   private def post_params
-    params.require(:post).permit(:title, :body, :image, :comments)
+    params.require(:post).permit(:title, :body, :image, :comments, :user)
   end
 end
