@@ -1,3 +1,26 @@
+<style>
+h1{
+  color:#8E0098;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: monospace;
+  letter-spacing: 3px;
+  text-shadow: 4px 2px 8px gold;
+
+}
+p{
+  color:#00087B;
+  font-size: 25px;
+  text-align: left;
+  padding-top: 20px;
+  font-family: monospace;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-indent: 50px;
+}
+</style>
+
 <h1>Add Post</h1>
 <%= form_for :post, url: posts_path, html: {multipart: true } do |f| %>
 
@@ -14,9 +37,11 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </p>
-  
+
   <p>
-    <%= f.submit %>
+    <%= f.submit :Post %>
   </p>
   <% end %>
+  <p>
 <%= link_to 'Back', posts_path %>
+</p>
