@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20180423033827) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "user"
     t.string "title"
     t.text "body"
+    t.string "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_file_name"

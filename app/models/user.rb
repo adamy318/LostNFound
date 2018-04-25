@@ -5,7 +5,7 @@ class User < ApplicationRecord
   include SecureRandom
 
   # allows virtual attributes to be 'get' and 'set'
-  attr_accessor :password, :password_confirmation, :password_salt, :pass_hash
+  attr_accessor :password, :password_confirmation, :pass_hash
 
   # this and block below it makes sure username and email
   # is lowercase before being saved in the database
