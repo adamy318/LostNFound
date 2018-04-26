@@ -3,7 +3,9 @@ require 'pbkdf2'
 class User < ApplicationRecord
 
   include SecureRandom
-
+  
+  has_many :posts
+  
   # allows virtual attributes to be 'get' and 'set'
   attr_accessor :password, :password_confirmation, :pass_hash
 
