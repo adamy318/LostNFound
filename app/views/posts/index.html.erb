@@ -27,28 +27,30 @@ td{
   padding-right:25px;
 
 }
+.table-bordered td, .table-bordered th{
+    border-color: black !important;
+}
 </style>
-<p>
-  <%= link_to 'New Post', new_post_path %>
-</p>
 <h1>Posts are Here</h1>
 
-
-<table>
-  <tr>
-    <th>Photos</th>
-    <th colspan = "1"></th>
-    <th>Title</th>
-    <th colspan = "2"></th>
-  </tr>
-
-  <% @posts.each do |post| %>
+<div class="container">
+<p><%= link_to 'New Post', new_post_path, class: "btn btn-primary" %></p>
+  <table class="table table-bordered">
     <tr>
-      <td><%= image_tag post.image.url(:thumb) %></td>
-      <th colspan = "1"></th>
-      <td><%= post.title %></td>
-      <th colspan = "2"></th>
-      <td><%= link_to 'Show Full Text', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-  <% end %>
-</table>
+      <th>Photos</th>
+      <th>Title</th>
+      <th>Date Created</th>
+    </tr>
+  
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= image_tag post.image.url(:thumb) %></td>
+        <td>
+          <%= link_to(post_path(post)) do %>
+            <%= post.title %>
+          <% end %>
+        </td>
+        <td><%= post.created_at.strftime("%m-%d-%Y") %></td>
+    <% end %>
+  </table>
+</div>
